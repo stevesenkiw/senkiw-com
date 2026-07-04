@@ -14,18 +14,23 @@
       <p class="album-kicker">The Waking AIs</p>
       <h1>Video Sound 2.0</h1>
       <audio class="album-player" controls preload="metadata" src="audio/video-sound-2-full-album.mp3"></audio>
+      <div class="album-controls" aria-label="Track navigation">
+        <button class="track-skip" type="button" data-skip="-1" aria-label="Previous track">&lt;</button>
+        <p class="now-playing" aria-live="polite">01 Watch Your Money</p>
+        <button class="track-skip" type="button" data-skip="1" aria-label="Next track">&gt;</button>
+      </div>
       <ol class="track-list">
-        <li><span>01</span>Watch Your Money</li>
-        <li><span>02</span>Beginning</li>
-        <li><span>03</span>Move On</li>
-        <li><span>04</span>On A Train</li>
-        <li><span>05</span>Headlights</li>
-        <li><span>06</span>Waiting</li>
-        <li><span>07</span>Taking The Hard Way</li>
-        <li><span>08</span>More Than What You're Given</li>
-        <li><span>09</span>But I Already Have It</li>
-        <li><span>10</span>Get Up Easy</li>
-        <li><span>11</span>If You Know Why</li>
+        <li><button type="button" data-start="0"><span>01</span>Watch Your Money</button></li>
+        <li><button type="button" data-start="224.8"><span>02</span>Beginning</button></li>
+        <li><button type="button" data-start="429.52"><span>03</span>Move On</button></li>
+        <li><button type="button" data-start="623.8"><span>04</span>On A Train</button></li>
+        <li><button type="button" data-start="832.4"><span>05</span>Headlights</button></li>
+        <li><button type="button" data-start="1041.56"><span>06</span>Waiting</button></li>
+        <li><button type="button" data-start="1256.04"><span>07</span>Taking The Hard Way</button></li>
+        <li><button type="button" data-start="1448.48"><span>08</span>More Than What You're Given</button></li>
+        <li><button type="button" data-start="1660.8"><span>09</span>But I Already Have It</button></li>
+        <li><button type="button" data-start="1876.76"><span>10</span>Get Up Easy</button></li>
+        <li><button type="button" data-start="2086.12"><span>11</span>If You Know Why</button></li>
       </ol>
     </section>
   </main>
@@ -33,5 +38,6 @@
   <nav id="site-menu" class="site-menu" aria-label="Site navigation"><div class="menu-inner"><a class="menu-name" href="/">Steve Senkiw</a><div class="menu-rule"></div><a href="/">Home</a><a href="/about.html">About</a><a href="/projects.html">Projects</a><a href="/video-sound-2.html">Music</a><a href="/contact.html">Contact</a></div></nav>
   <div class="menu-backdrop" hidden></div>
   <script src="js/menu.js"></script>
+  <script src="js/album-player.js"></script>
 </body>
 </html>
