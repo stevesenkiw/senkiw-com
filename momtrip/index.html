@@ -8,8 +8,8 @@
 <title>Sandi Senkiw's Flight Itinerary</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body { margin: 0; }
+  html { -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+  body { margin: 0; overflow-x: hidden; }
   img, svg { max-width: 100%; }
 
   :root {
@@ -82,14 +82,14 @@
     border-bottom: 1px solid var(--line);
   }
   .topbar-inner {
-    max-width: 82rem;
+    max-width: 76rem;
     margin: 0 auto;
-    padding: 0.85rem 1.5rem 0.95rem;
+    padding: 0.65rem 1.5rem 0.7rem;
     display: grid;
-    grid-template-columns: clamp(9.25rem, 18vw, 12rem) minmax(0, 1fr);
-    column-gap: 0.85rem;
-    row-gap: 0.55rem;
-    align-items: start;
+    grid-template-columns: clamp(7.25rem, 11vw, 8.75rem) minmax(0, 1fr);
+    column-gap: 1.05rem;
+    row-gap: 0.45rem;
+    align-items: center;
   }
   .brand {
     grid-row: 1 / span 2;
@@ -107,9 +107,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 1.15rem;
-    min-height: 2rem;
-    padding-top: 0.15rem;
+    gap: 1rem;
+    min-height: 1.6rem;
   }
   .brand-date {
     font-size: 0.78rem;
@@ -145,11 +144,11 @@
     flex: 0 0 auto;
     display: inline-flex;
     align-items: center;
-    font-size: 0.8rem;
+    font-size: 0.76rem;
     font-weight: 600;
     color: var(--ink-soft);
     text-decoration: none;
-    padding: 0.42rem 0.9rem;
+    padding: 0.38rem 0.78rem;
     border: 1px solid var(--line);
     border-radius: 999px;
     background: var(--paper-2);
@@ -174,6 +173,8 @@
   @media (max-width: 640px) {
     .topbar-inner {
       grid-template-columns: minmax(0, 1fr);
+      padding: 1rem 1.25rem 1.1rem;
+      row-gap: 0.8rem;
     }
     .brand,
     .topbar-row,
@@ -182,11 +183,31 @@
     }
     .brand {
       grid-row: auto;
-      max-width: 12rem;
+      max-width: 11.5rem;
     }
     .topbar-row {
-      justify-content: space-between;
-      gap: 1rem;
+      justify-content: flex-start;
+      gap: 1.35rem;
+      width: 100%;
+    }
+    .brand-date,
+    .nav-customs {
+      font-size: 0.74rem;
+    }
+    .legnav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.45rem;
+      overflow: visible;
+      padding: 0;
+    }
+    .legnav a {
+      min-width: 0;
+      justify-content: flex-start;
+      font-size: 0.72rem;
+      line-height: 1.2;
+      padding: 0.52rem 0.65rem;
+      white-space: normal;
     }
   }
 
@@ -237,7 +258,13 @@
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    padding: 3rem 0 3rem;
+    padding: 2.35rem 0 3rem;
+  }
+
+  @media (max-width: 640px) {
+    .cover {
+      padding-top: 2rem;
+    }
   }
 
   .cover .airmail { margin-bottom: 1.25rem; }
@@ -271,6 +298,12 @@
     border-radius: 3px;
     margin: 1rem 0 0;
     overflow: hidden;
+  }
+
+  @media (max-width: 640px) {
+    .facts {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   .fact {
