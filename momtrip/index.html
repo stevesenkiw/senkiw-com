@@ -82,13 +82,13 @@
     border-bottom: 1px solid var(--line);
   }
   .topbar-inner {
-    max-width: 46rem;
+    max-width: 82rem;
     margin: 0 auto;
-    padding: 0.95rem 1.5rem 1rem;
+    padding: 0.85rem 1.5rem 0.95rem;
     display: grid;
-    grid-template-columns: clamp(9.5rem, 25vw, 12.75rem) minmax(0, 1fr);
-    column-gap: 1.3rem;
-    row-gap: 0.65rem;
+    grid-template-columns: clamp(9.25rem, 18vw, 12rem) minmax(0, 1fr);
+    column-gap: 0.85rem;
+    row-gap: 0.55rem;
     align-items: start;
   }
   .brand {
@@ -107,8 +107,9 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 1.4rem;
+    gap: 1.15rem;
     min-height: 2rem;
+    padding-top: 0.15rem;
   }
   .brand-date {
     font-size: 0.78rem;
@@ -131,14 +132,17 @@
   .legnav {
     grid-column: 2;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 0.5rem;
-    overflow: visible;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
     margin: 0;
-    padding: 0 0 0.15rem;
+    padding: 0 0 0.2rem;
   }
+  .legnav::-webkit-scrollbar { display: none; }
   .legnav a {
-    flex: 0 1 auto;
+    flex: 0 0 auto;
     display: inline-flex;
     align-items: center;
     font-size: 0.8rem;
@@ -178,7 +182,7 @@
     }
     .brand {
       grid-row: auto;
-      max-width: 13rem;
+      max-width: 12rem;
     }
     .topbar-row {
       justify-content: space-between;
