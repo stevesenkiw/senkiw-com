@@ -691,32 +691,56 @@
   .aircraft {
     border: 1px solid var(--line);
     border-radius: 12px;
-    background: #EAF8FB;
+    background: #DFF3F8;
     padding: 0.75rem 0.85rem 1rem;
     overflow: hidden;
   }
   .ac-scene {
     position: relative;
-    max-width: 560px;
+    max-width: none;
     margin: 0 auto 0.4rem;
-    padding: 0.65rem 0 0.35rem;
+    padding: 0.8rem 0 0.45rem;
     background-color: #DFF3F8;
-    background-image: url("../images/momtrip-clouds-sky.png");
+    background-image: url("../images/momtrip-clouds-soft-sky.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 8px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .ac-scene::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+      linear-gradient(90deg, transparent 7%, rgba(46, 110, 140, 0.18) 7% 7.15%, transparent 7.15% 93%, rgba(46, 110, 140, 0.18) 93% 93.15%, transparent 93.15%),
+      linear-gradient(transparent 38%, rgba(46, 110, 140, 0.18) 38% 38.45%, transparent 38.45% 63%, rgba(46, 110, 140, 0.14) 63% 63.35%, transparent 63.35%);
+    opacity: 0.26;
+  }
+  .ac-scene::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(90deg, transparent, rgba(46, 110, 140, 0.28), transparent) center 48% / 100% 1px no-repeat,
+      linear-gradient(90deg, transparent, rgba(46, 110, 140, 0.18), transparent) center 67% / 88% 1px no-repeat;
+    opacity: 0.32;
   }
   .ac-clouds {
     display: none;
   }
   .ac-photo {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
     height: auto;
     display: block;
-    filter: drop-shadow(0 0.55rem 0.45rem rgba(35, 42, 51, 0.16));
+    transform: translateY(-0.05rem) scale(1.045);
+    transform-origin: center;
+    filter: drop-shadow(0 0.78rem 0.5rem rgba(35, 42, 51, 0.28));
   }
 
   .aircraft > summary {
@@ -736,7 +760,7 @@
 
   .aircraft .ac-photo {
     width: 100%;
-    max-width: 560px;
+    max-width: 600px;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -1163,7 +1187,7 @@
     .aircraft {
       padding: 0.08in 0.1in 0.1in;
       border-radius: 6px;
-      background: #EAF8FB;
+      background: #DFF3F8;
       print-color-adjust: exact;
       -webkit-print-color-adjust: exact;
       break-inside: avoid;
@@ -1173,10 +1197,15 @@
       max-width: 3.5in;
       margin-bottom: 0.05in;
       background-color: #DFF3F8;
-      background-image: url("../images/momtrip-clouds-sky.png");
+      background-image: url("../images/momtrip-clouds-soft-sky.png");
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+    .ac-scene::before,
+    .ac-scene::after {
       print-color-adjust: exact;
       -webkit-print-color-adjust: exact;
     }
